@@ -1,6 +1,9 @@
 {
-  "name": "Books",
-  "version": "0.1",
+  "name": "books",
+  "version": "1.0.0",
+  "description": "",
+  "repository": "",
+  "license": "",
   "author": "António Regadas",
   "devDependencies": {
     "bower": "^1.3.9",

@@ -1,6 +1,6 @@
 {
-    "name": "Books",
-    "version": "0.1",
+    "name": "books",
+    "version": "1.0.0",
     "author": "António Regadas",
     "description": "",
     "main": "index.html",
