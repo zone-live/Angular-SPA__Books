@@ -1,0 +1,1 @@
+angular.module('Books', ['ui.bootstrap', 'ui.router', 'ngCookies', 'ngRoute', 'angularUtils.directives.dirPagination']);

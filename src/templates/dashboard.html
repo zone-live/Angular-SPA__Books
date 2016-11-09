@@ -1,0 +1,58 @@
+<section class="col-xs-12">
+
+  <form class="w100 inlineBlock">
+    <div class="form-group">
+      <div class="input-group col-xs-4 pull-left">
+        <div class="input-group-addon"><i class="fa fa-search"></i></div>
+        	<input type="text" class="form-control" placeholder="Filtrar" ng-model="searchBooks">
+      	</div>
+    </div>
+  </form>
+
+<section id="BooksTable">
+	<table class="table table-condensed table-striped table-hover marTop20">
+		<thead>
+			<tr>
+				<th ng-click="sort('authorAvatar')">Author Avatar
+                	<span class="glyphicon sort-icon" ng-show="sortKey=='authorAvatar'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+				</th>
+				<th ng-click="sort('authorName')"> Author Name
+                	<span class="glyphicon sort-icon" ng-show="sortKey=='authorName'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+				</th>
+				<th ng-click="sort('bookName')">Book Name
+                	<span class="glyphicon sort-icon" ng-show="sortKey=='bookName'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+				</th>
+				<th ng-click="sort('bookCover')">Book Cover
+                	<span class="glyphicon sort-icon" ng-show="sortKey=='bookCover'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+				</th>
+				<th>Description</th>
+				<th>Genre</th>
+				<th>Published</th>
+				<th>Likes</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody ng-model="books">
+        	<tr dir-paginate="book in books | orderBy:sortKey:reverse | filter:searchBooks | itemsPerPage:7">
+				<td><img src="{{ book.author.avatar }}" height="80"></td>
+				<td>{{ book.author.name }}</td>
+				<td>{{ book.name }}</td>
+				<td><img src="{{ book.cover }}" height="80"></td>
+				<td>{{ book.description }}</td>
+				<td>{{ book.genre.category }}</td>
+				<td>{{ book.published }}</td>
+				<td>{{ book.likes }}</td>
+				<td><a ui-sref="detail({ bookId: book.id })">Ver Detalhes</a></td>
+			</tr>
+		</tbody>
+	</table>
+</section>
+	<dir-pagination-controls class="inlineBlock pull-right"
+		max-size="10000"
+		direction-links="true"
+		boundary-links="true">
+	</dir-pagination-controls>
+
+
+
+</section>

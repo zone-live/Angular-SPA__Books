@@ -1,0 +1,28 @@
+<section class="col-xs-12" ng-model="bookSelected">
+
+	<a ui-sref="index()" class="pull-left marBot20 w100"><i class="fa fa-chevron-left" aria-hidden="true"></i> Voltar</a>
+
+	<table class="table w100 table-striped table-hover borderless">
+		<thead>
+			<tr>
+				<th>Author Avatar</th>
+				<th>Author Name</th>
+				<th>Book Name</th>
+				<th>Book Cover</th>
+				<th>Book Genre</th>
+				<th>Book Likes</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="book in bookSelected" class="book-item">
+				<td><img src="{{ book.author.avatar }}" height="200"></td>
+				<td>{{ book.author.name }}</td>
+				<td>{{ book.name }}</td>
+				<td><img src="{{ book.cover }}" height="200"></td>
+				<td>{{ book.genre.category }}</td>
+				<td>{{ book.likes }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+</section>

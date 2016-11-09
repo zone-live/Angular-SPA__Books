@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en" ng-app="Books">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Books</title>
+	<!-- STYLES -->
+	<!-- build:css lib/css/main.min.css -->
+	<link rel="stylesheet" type="text/css" href="components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="components/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="components/rdash-ui/dist/css/rdash.min.css">
+	<!-- endbuild -->
+
+	<!-- SCRIPTS -->
+	<!-- build:js lib/js/main.min.js -->
+	<script type="text/javascript" src="components/angular/angular.min.js"></script>
+	<script type="text/javascript" src="components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+	<script type="text/javascript" src="components/angular-cookies/angular-cookies.min.js"></script>
+	<script type="text/javascript" src="components/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<!-- endbuild -->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"></script>
+	<!-- Custom Scripts -->
+	<link href="https://fonts.googleapis.com/css?family=Catamaran:400,700" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" href="css/custom.css">
+
+</head>
+<body ng-controller="MasterCtrl">
+  <div id="page-wrapper" ng-class="{'open': toggle}" ng-cloak>
+
+	<!-- Sidebar -->
+	<div id="sidebar-wrapper">
+	  <ul class="sidebar">
+		<li class="sidebar-main">
+			<a href="/" target="_blank">Books</a>
+			<a ng-click="toggleSidebar()" class="toggle-btn">
+				<span class="menu-icon"> < </span>
+			</a>
+		</li>
+		<li class="sidebar-title"><span>Navigation</span></li>
+		<li class="sidebar-list">
+			<a href="#">
+				<i class="fa fa-table" aria-hidden="true"></i> Book List
+			</a>
+		</li>
+	  </ul>
+	</div>
+	<!-- End Sidebar -->
+
+	<div id="content-wrapper">
+	  <div class="page-content">
+
+		<!-- Main Content -->
+		<div ui-view class="marTop20 bigView"></div>
+
+	  </div><!-- End Page Content -->
+	</div><!-- End Content Wrapper -->
+  </div><!-- End Page Wrapper -->
+
+	<script type="text/javascript" src="js/module.js"></script>
+	<script type="text/javascript" src="js/routes.js"></script>
+
+	<script type="text/javascript" src="js/dirPagination.js"></script>
+
+	<script type="text/javascript" src="js/controllers/master-ctrl.js"></script>
+	<script type="text/javascript" src="js/controllers/detail-ctrl.js"></script>
+	
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	
+</body>
+</html>
